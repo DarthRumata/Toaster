@@ -17,7 +17,7 @@ public struct Toast: Equatable {
     let style: ToastStyle
     let duration: Duration
     
-    init(title: String? = nil, message: String?, style: ToastStyle, duration: Duration = .seconds(4)) {
+    public init(title: String? = nil, message: String?, style: ToastStyle, duration: Duration = .seconds(4)) {
         self.title = title ?? style.title
         self.message = message
         self.style = style
