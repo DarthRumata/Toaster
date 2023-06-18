@@ -17,6 +17,10 @@ public struct Toast: Equatable {
     let style: ToastStyle
     let duration: Double
     
+    @available(iOS, obsoleted: 16.0, message: "Please use a modern API")
+    @available(macOS, obsoleted: 13.0, message: "Please use a modern API")
+    @available(watchOS, obsoleted: 9.0, message: "Please use a modern API")
+    @available(tvOS, obsoleted: 16.0, message: "Please use a modern API")
     public init(title: String? = nil, message: String?, style: ToastStyle, duration: Double = 4) {
         self.title = title ?? style.title
         self.message = message
