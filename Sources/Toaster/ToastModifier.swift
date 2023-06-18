@@ -15,7 +15,7 @@ struct ToastModifier: ViewModifier {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .modify {
-                if #available(iOS 15.0, *) {
+                if #available(iOS 15.0, watchOS 8.0, macOS 12.0, tvOS 15.0, *) {
                     $0.overlay(alignment: .bottom) {
                         overlay(toastView: toastView)
                     }
