@@ -17,9 +17,13 @@ let package = Package(
     targets: [
         .target(
             name: "Toaster",
-            dependencies: []),
+            dependencies: [],
+            path: "Sources"
+        ),
         .testTarget(
             name: "ToasterTests",
-            dependencies: ["Toaster"]),
+            dependencies: ["Toaster"],
+            path: "Tests"
+        ),
     ]
 )
