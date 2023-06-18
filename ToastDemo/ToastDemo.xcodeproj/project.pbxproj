@@ -11,8 +11,23 @@
 		12AFA08F2A3FBFFD0010E01E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA08E2A3FBFFD0010E01E /* ContentView.swift */; };
 		12AFA0912A3FBFFF0010E01E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12AFA0902A3FBFFF0010E01E /* Assets.xcassets */; };
 		12AFA0942A3FBFFF0010E01E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12AFA0932A3FBFFF0010E01E /* Preview Assets.xcassets */; };
-		12AFA0A22A3FC5F30010E01E /* Toaster in Frameworks */ = {isa = PBXBuildFile; productRef = 12AFA0A12A3FC5F30010E01E /* Toaster */; };
+		12AFA0EE2A3FCC980010E01E /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AFA0ED2A3FCC980010E01E /* Toaster.framework */; };
+		12AFA0EF2A3FCC980010E01E /* Toaster.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12AFA0ED2A3FCC980010E01E /* Toaster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		12AFA0F02A3FCC980010E01E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				12AFA0EF2A3FCC980010E01E /* Toaster.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		12AFA0892A3FBFFD0010E01E /* ToastDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToastDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,7 +35,7 @@
 		12AFA08E2A3FBFFD0010E01E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		12AFA0902A3FBFFF0010E01E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12AFA0932A3FBFFF0010E01E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		12AFA0A32A3FC7090010E01E /* Toaster */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Toaster; path = ../Toaster; sourceTree = "<group>"; };
+		12AFA0ED2A3FCC980010E01E /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12AFA0A22A3FC5F30010E01E /* Toaster in Frameworks */,
+				12AFA0EE2A3FCC980010E01E /* Toaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,7 +53,6 @@
 		12AFA0802A3FBFFD0010E01E = {
 			isa = PBXGroup;
 			children = (
-				12AFA09A2A3FC0280010E01E /* Packages */,
 				12AFA08B2A3FBFFD0010E01E /* ToastDemo */,
 				12AFA08A2A3FBFFD0010E01E /* Products */,
 				12AFA09D2A3FC0D90010E01E /* Frameworks */,
@@ -72,17 +86,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		12AFA09A2A3FC0280010E01E /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				12AFA0A32A3FC7090010E01E /* Toaster */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		12AFA09D2A3FC0D90010E01E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12AFA0ED2A3FCC980010E01E /* Toaster.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,6 +104,7 @@
 				12AFA0852A3FBFFD0010E01E /* Sources */,
 				12AFA0862A3FBFFD0010E01E /* Frameworks */,
 				12AFA0872A3FBFFD0010E01E /* Resources */,
+				12AFA0F02A3FCC980010E01E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -104,7 +112,6 @@
 			);
 			name = ToastDemo;
 			packageProductDependencies = (
-				12AFA0A12A3FC5F30010E01E /* Toaster */,
 			);
 			productName = ToastDemo;
 			productReference = 12AFA0892A3FBFFD0010E01E /* ToastDemo.app */;
@@ -362,13 +369,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		12AFA0A12A3FC5F30010E01E /* Toaster */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Toaster;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12AFA0812A3FBFFD0010E01E /* Project object */;
 }
