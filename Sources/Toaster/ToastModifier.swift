@@ -52,11 +52,12 @@ struct ToastModifier: ViewModifier {
         task?.cancel()
         
         task = Task {
-            try? await Task.sleep(nanoseconds: UInt64(toast.duration * Double(1_000_000_000)))
-            dismissToast()
+            try? await Task.sleep(nanoseconds: UInt64(toast.dismissDelay * Double(1_000_000_000)))
+            await dismissToast()
         }
     }
     
+    @MainActor
     private func dismissToast() {
         withAnimation {
             toast = nil
