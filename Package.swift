@@ -1,12 +1,11 @@
-// swift-tools-version: 5.8
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.7
 
 import PackageDescription
 
 let package = Package(
     name: "Toaster",
     platforms: [
-        .macOS(.v13), .iOS(.v16), .tvOS(.v16), .watchOS(.v9)
+        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)
     ],
     products: [
         .library(

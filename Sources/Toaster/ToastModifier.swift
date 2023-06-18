@@ -14,19 +14,30 @@ struct ToastModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .overlay(alignment: .bottom) {
-                ZStack {
-                    toastView()
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                        .offset(y: -32)
+            .modify {
+                if #available(iOS 15.0, *) {
+                    $0.overlay(alignment: .bottom) {
+                        overlay(toastView: toastView)
+                    }
+                } else {
+                    // Fallback on earlier versions
+                    $0.overlay(overlay(toastView: toastView), alignment: .bottom)
                 }
-                .animation(.easeInOut(duration: 0.3), value: toast)
             }
             .onChange(of: toast) { value in
                 if value != nil {
                     scheduleDismiss()
                 }
             }
+    }
+    
+    @ViewBuilder private func overlay(toastView: () -> some View) -> some View {
+        ZStack {
+            toastView()
+                .transition(.move(edge: .bottom).combined(with: .opacity))
+                .offset(y: -32)
+        }
+        .animation(.easeInOut(duration: 0.3), value: toast)
     }
     
     @ViewBuilder private func toastView() -> some View {
@@ -41,7 +52,7 @@ struct ToastModifier: ViewModifier {
         task?.cancel()
         
         task = Task {
-            try? await Task.sleep(for: toast.duration)
+            try? await Task.sleep(nanoseconds: UInt64(toast.duration * Double(1_000_000_000)))
             dismissToast()
         }
     }
@@ -53,5 +64,11 @@ struct ToastModifier: ViewModifier {
         
         task?.cancel()
         task = nil
+    }
+}
+
+private extension View {
+    func modify<Content>(@ViewBuilder _ transform: (Self) -> Content) -> Content {
+        transform(self)
     }
 }
