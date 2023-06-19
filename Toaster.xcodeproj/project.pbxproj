@@ -37,6 +37,7 @@
 		12AFA0D22A3FCB9C0010E01E /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		12AFA0DC2A3FCBBB0010E01E /* ToastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTests.swift; sourceTree = "<group>"; };
 		12FB446D2A40D0A000A0F697 /* Toaster.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Toaster.xctestplan; path = Tests/Toaster.xctestplan; sourceTree = "<group>"; };
+		12FB44702A40D6E700A0F697 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = .github/workflows; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		12AFA0A62A3FCB0F0010E01E = {
 			isa = PBXGroup;
 			children = (
+				12FB44702A40D6E700A0F697 /* workflows */,
 				12FB446D2A40D0A000A0F697 /* Toaster.xctestplan */,
 				12AFA0DA2A3FCBBB0010E01E /* Tests */,
 				12AFA0CA2A3FCB9C0010E01E /* LICENSE */,
