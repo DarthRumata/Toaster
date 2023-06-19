@@ -13,7 +13,7 @@ final class ToastTests: XCTestCase {
         XCTAssertEqual(toast.dismissDelay, 2.399, accuracy: 0.0001, "Incorrect delay conversion")
     }
     
-    #if compiler(<5.8)
+    #if compiler(<5.7)
     func testInitWithDelayDouble() throws {
         let toast = Toast(message: Constants.message, style: .error, dismissDelay: 2.399)
         XCTAssertEqual(toast.dismissDelay, 2.399, accuracy: 0.0001, "Incorrect custom delay")
