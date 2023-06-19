@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         let errorBinding = Binding<Toast?>(get: {
             if error != nil {
-                return Toast(message: "Toasted!!!", style: .error)
+                return Toast(message: "Toasted!!!", style: .error, dismissDelay: 3)
             }
             return nil
         }, set: { newValue in

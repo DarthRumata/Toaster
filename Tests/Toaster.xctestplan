@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "7E22614C-3800-4FD9-A217-C4E2017DD611",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Toaster.xcodeproj",
+        "identifier" : "12AFA0B92A3FCB100010E01E",
+        "name" : "ToasterTests"
+      }
+    }
+  ],
+  "version" : 1
+}
