@@ -1,6 +1,7 @@
 # Toaster
 
 ![workflow](https://github.com/DarthRumata/Toaster/actions/workflows/swift.yml/badge.svg)
+[![codecov](https://codecov.io/gh/DarthRumata/Toaster/branch/main/graph/badge.svg?token=UNACNI5GTO)](https://codecov.io/gh/DarthRumata/Toaster)
 
 Library for presenting toast views:
 
