@@ -10,9 +10,14 @@
 		12AFA0BB2A3FCB100010E01E /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12AFA0B02A3FCB0F0010E01E /* Toaster.framework */; };
 		12AFA0D42A3FCB9C0010E01E /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA0CD2A3FCB9C0010E01E /* ToastView.swift */; };
 		12AFA0D52A3FCB9C0010E01E /* View+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA0CE2A3FCB9C0010E01E /* View+Toast.swift */; };
-		12AFA0D62A3FCB9C0010E01E /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA0CF2A3FCB9C0010E01E /* ToastModifier.swift */; };
 		12AFA0D72A3FCB9C0010E01E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA0D02A3FCB9C0010E01E /* Toast.swift */; };
 		12AFA0DD2A3FCBBB0010E01E /* ToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AFA0DC2A3FCBBB0010E01E /* ToastTests.swift */; };
+		12FB44722A4119CA00A0F697 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44712A4119CA00A0F697 /* ToastModifier.swift */; };
+		12FB44742A411AEF00A0F697 /* View+Modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44732A411AEF00A0F697 /* View+Modify.swift */; };
+		12FB44762A411C5100A0F697 /* ToastScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44752A411C5100A0F697 /* ToastScheduler.swift */; };
+		12FB44782A422F5F00A0F697 /* ToastAnimationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */; };
+		12FB44802A437BB800A0F697 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 12FB447F2A437BB800A0F697 /* DequeModule */; };
+		12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +36,17 @@
 		12AFA0CA2A3FCB9C0010E01E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		12AFA0CD2A3FCB9C0010E01E /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		12AFA0CE2A3FCB9C0010E01E /* View+Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Toast.swift"; sourceTree = "<group>"; };
-		12AFA0CF2A3FCB9C0010E01E /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		12AFA0D02A3FCB9C0010E01E /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		12AFA0D12A3FCB9C0010E01E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		12AFA0D22A3FCB9C0010E01E /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		12AFA0DC2A3FCBBB0010E01E /* ToastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastTests.swift; sourceTree = "<group>"; };
 		12FB446D2A40D0A000A0F697 /* Toaster.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Toaster.xctestplan; path = Tests/Toaster.xctestplan; sourceTree = "<group>"; };
 		12FB44702A40D6E700A0F697 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = .github/workflows; sourceTree = "<group>"; };
+		12FB44712A4119CA00A0F697 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
+		12FB44732A411AEF00A0F697 /* View+Modify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modify.swift"; sourceTree = "<group>"; };
+		12FB44752A411C5100A0F697 /* ToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScheduler.swift; sourceTree = "<group>"; };
+		12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAnimationProperties.swift; sourceTree = "<group>"; };
+		12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingToastScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12FB44802A437BB800A0F697 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +105,11 @@
 			children = (
 				12AFA0CD2A3FCB9C0010E01E /* ToastView.swift */,
 				12AFA0CE2A3FCB9C0010E01E /* View+Toast.swift */,
-				12AFA0CF2A3FCB9C0010E01E /* ToastModifier.swift */,
+				12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */,
+				12FB44732A411AEF00A0F697 /* View+Modify.swift */,
+				12FB44752A411C5100A0F697 /* ToastScheduler.swift */,
+				12FB44712A4119CA00A0F697 /* ToastModifier.swift */,
+				12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */,
 				12AFA0D02A3FCB9C0010E01E /* Toast.swift */,
 			);
 			path = Toaster;
@@ -144,6 +158,9 @@
 			dependencies = (
 			);
 			name = Toaster;
+			packageProductDependencies = (
+				12FB447F2A437BB800A0F697 /* DequeModule */,
+			);
 			productName = Toaster;
 			productReference = 12AFA0B02A3FCB0F0010E01E /* Toaster.framework */;
 			productType = "com.apple.product-type.framework";
@@ -194,6 +211,9 @@
 				Base,
 			);
 			mainGroup = 12AFA0A62A3FCB0F0010E01E;
+			packageReferences = (
+				12FB447E2A437BB800A0F697 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 12AFA0B12A3FCB0F0010E01E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -227,8 +247,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				12AFA0D52A3FCB9C0010E01E /* View+Toast.swift in Sources */,
+				12FB44782A422F5F00A0F697 /* ToastAnimationProperties.swift in Sources */,
 				12AFA0D72A3FCB9C0010E01E /* Toast.swift in Sources */,
-				12AFA0D62A3FCB9C0010E01E /* ToastModifier.swift in Sources */,
+				12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */,
+				12FB44722A4119CA00A0F697 /* ToastModifier.swift in Sources */,
+				12FB44762A411C5100A0F697 /* ToastScheduler.swift in Sources */,
+				12FB44742A411AEF00A0F697 /* View+Modify.swift in Sources */,
 				12AFA0D42A3FCB9C0010E01E /* ToastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +544,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12FB447E2A437BB800A0F697 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12FB447F2A437BB800A0F697 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12FB447E2A437BB800A0F697 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12AFA0A72A3FCB0F0010E01E /* Project object */;
 }
