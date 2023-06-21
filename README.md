@@ -5,6 +5,9 @@
 
 Toaster is a lightweight SwiftUI library for presenting toast messages in your iOS apps. It provides a simple and customizable way to display temporary notifications to the user.
 
+<img src="https://github.com/DarthRumata/Toaster/assets/3137314/c39c1079-8488-474d-8dde-c23a24444558" width="300">
+
+
 ## Features
 
 - Predefined toast styles (error, success, warning)
@@ -102,4 +105,4 @@ struct ContentView: View {
 }
 ```
 
-<img src="https://github.com/DarthRumata/Toaster/assets/3137314/c39c1079-8488-474d-8dde-c23a24444558" width="300">
+
