@@ -1,15 +1,18 @@
 //
-//  ToastModifier.swift
-//  
+//  CustomToastModifier.swift
+//  Toaster
 //
-//  Created by Stas Kirichok on 16.06.2023.
+//  Created by Stas Kirichok on 19.06.2023.
 //
 
 import SwiftUI
 
 struct ToastModifier: ViewModifier {
-    @Binding var toast: Toast?
-    @State private var task: Task<(), Never>?
+    @ObservedObject private var scheduler: ToastScheduler
+    
+    init(scheduler: ToastScheduler) {
+        self.scheduler = scheduler
+    }
     
     func body(content: Content) -> some View {
         content
@@ -24,52 +27,25 @@ struct ToastModifier: ViewModifier {
                     $0.overlay(overlay(toastView: toastView), alignment: .bottom)
                 }
             }
-            .onChange(of: toast) { value in
-                if value != nil {
-                    scheduleDismiss()
-                }
-            }
     }
     
     @ViewBuilder private func overlay(toastView: () -> some View) -> some View {
         ZStack {
             toastView()
                 .transition(.move(edge: .bottom).combined(with: .opacity))
-                .offset(y: -32)
+                .offset(y: ToastAnimationDefaultProperties.iosBottomOffset)
         }
-        .animation(.easeInOut(duration: 0.3), value: toast)
+        .animation(.easeInOut(duration: ToastAnimationDefaultProperties.transitionDuration), value: scheduler.currentToast)
     }
     
     @ViewBuilder private func toastView() -> some View {
-        if let toast = toast {
-            ToastView(toast: toast)
+        if let toastWrapper = scheduler.currentToast {
+            switch toastWrapper {
+            case .predefinedView(let toast):
+                AnyView(ToastView(toast: toast))
+            case .customView(let toast):
+                toast.view
+            }
         }
-    }
-    
-    private func scheduleDismiss() {
-        guard let toast = toast else { return }
-        
-        task?.cancel()
-        
-        task = Task {
-            try? await Task.sleep(nanoseconds: UInt64(toast.dismissDelay * Double(1_000_000_000)))
-            await dismissToast()
-        }
-    }
-    
-    @MainActor
-    private func dismissToast() {
-        withAnimation {
-            toast = nil
-        }
-        
-        task?.cancel()
-        task = nil
-    }
-}
-
-private extension View {
-    func modify<Content>(@ViewBuilder _ transform: (Self) -> Content) -> Content {
-        transform(self)
     }
 }

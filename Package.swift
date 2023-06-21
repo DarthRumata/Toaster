@@ -13,11 +13,17 @@ let package = Package(
             targets: ["Toaster"]),
     ],
     dependencies: [
+        .package(
+            url: "https://github.com/apple/swift-collections.git",
+            .upToNextMinor(from: "1.0.4")
+        )
     ],
     targets: [
         .target(
             name: "Toaster",
-            dependencies: [],
+            dependencies: [
+                .product(name: "DequeModule", package: "swift-collections")
+            ],
             path: "Sources"
         ),
         .testTarget(
