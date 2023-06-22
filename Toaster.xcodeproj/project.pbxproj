@@ -18,6 +18,7 @@
 		12FB44782A422F5F00A0F697 /* ToastAnimationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */; };
 		12FB44802A437BB800A0F697 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 12FB447F2A437BB800A0F697 /* DequeModule */; };
 		12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */; };
+		12FB44842A44E92A00A0F697 /* ToastOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44832A44E92A00A0F697 /* ToastOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		12FB44752A411C5100A0F697 /* ToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScheduler.swift; sourceTree = "<group>"; };
 		12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAnimationProperties.swift; sourceTree = "<group>"; };
 		12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingToastScheduler.swift; sourceTree = "<group>"; };
+		12FB44832A44E92A00A0F697 /* ToastOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				12FB44732A411AEF00A0F697 /* View+Modify.swift */,
 				12FB44752A411C5100A0F697 /* ToastScheduler.swift */,
 				12FB44712A4119CA00A0F697 /* ToastModifier.swift */,
+				12FB44832A44E92A00A0F697 /* ToastOptions.swift */,
 				12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */,
 				12AFA0D02A3FCB9C0010E01E /* Toast.swift */,
 			);
@@ -251,6 +254,7 @@
 				12AFA0D72A3FCB9C0010E01E /* Toast.swift in Sources */,
 				12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */,
 				12FB44722A4119CA00A0F697 /* ToastModifier.swift in Sources */,
+				12FB44842A44E92A00A0F697 /* ToastOptions.swift in Sources */,
 				12FB44762A411C5100A0F697 /* ToastScheduler.swift in Sources */,
 				12FB44742A411AEF00A0F697 /* View+Modify.swift in Sources */,
 				12AFA0D42A3FCB9C0010E01E /* ToastView.swift in Sources */,

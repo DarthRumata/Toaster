@@ -48,7 +48,11 @@ struct ContentView: View {
             }
         }
         .padding()
-        .toastView(toast: errorBinding)
+        .toastView(toast: errorBinding, options: {
+            $0
+                .position(.top)
+                .transition(.push)
+        })
         .toastView(scheduler: viewModel.toastScheduler)
         .toastView(isPresented: $isToastPresented) {
             ErrorView()
