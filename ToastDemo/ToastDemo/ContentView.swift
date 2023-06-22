@@ -54,9 +54,9 @@ struct ContentView: View {
                 .transition(.push)
         })
         .toastView(scheduler: viewModel.toastScheduler)
-        .toastView(isPresented: $isToastPresented) {
-            ErrorView()
-        }
+//        .toastView(isPresented: $isToastPresented) {
+//            ErrorView()
+//        }
     }
 }
 

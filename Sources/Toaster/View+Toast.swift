@@ -9,17 +9,20 @@ import SwiftUI
 
 private let globalScheduler = BindingToastScheduler()
 
+public typealias OptionsCallback = (ToastOptions) -> ToastOptions
+
 public extension View {
-    func toastView(toast: Binding<Toast?>, options: @escaping (ToastOptions) -> ToastOptions = { $0 }) -> some View {
-        let isPresenting = Binding {
+    func toastView(toast: Binding<Toast?>, options: @escaping OptionsCallback = { $0 }) -> some View {
+        let isPresented = Binding {
             return toast.wrappedValue != nil
-        } set: { isPresenting in
-            if !isPresenting {
+        } set: { isPresented in
+            if !isPresented {
                 toast.wrappedValue = nil
             }
         }
+
+        globalScheduler.update(binding: isPresented)
         
-        globalScheduler.update(binding: isPresenting)
         return modifier(ToastModifier(scheduler: globalScheduler, options: options(ToastOptions())))
             .onChange(of: toast.wrappedValue, perform: { toast in
                 if let toast = toast {
@@ -28,8 +31,9 @@ public extension View {
             })
     }
     
-    func toastView(isPresented: Binding<Bool>, @ViewBuilder view: @escaping () -> some View, dismissDelay: TimeInterval = ToastAnimationDefaultProperties.dismissDelay, options: @escaping (ToastOptions) -> ToastOptions = { $0 }) -> some View {
+    func toastView(isPresented: Binding<Bool>, @ViewBuilder view: @escaping () -> some View, dismissDelay: TimeInterval = ToastAnimationDefaultProperties.dismissDelay, options: @escaping OptionsCallback = { $0 }) -> some View {
         globalScheduler.update(binding: isPresented)
+        
         return modifier(ToastModifier(scheduler: globalScheduler, options: options(ToastOptions())))
             .onChange(of: isPresented.wrappedValue, perform: { isPresented in
                 if isPresented {
@@ -38,7 +42,7 @@ public extension View {
             })
     }
     
-    func toastView(scheduler: ToastScheduler, options: @escaping (ToastOptions) -> ToastOptions = { $0 }) -> some View {
+    func toastView(scheduler: ToastScheduler, options: @escaping OptionsCallback = { $0 }) -> some View {
         modifier(ToastModifier(scheduler: scheduler, options: options(ToastOptions())))
     }
 }
