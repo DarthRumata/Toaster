@@ -58,10 +58,15 @@ struct ContentView: View {
 
 struct ErrorView: View {
     var body: some View {
-        Text("AAAAA")
-            .frame(height: 100)
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 5).fill(.green))
+        VStack {
+            Text("Custom View content")
+            Image(systemName: "star")
+                .resizable()
+                .frame(width: 50, height: 50)
+        }
+        .frame(height: 100)
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 5).fill(.green))
     }
 }
 
