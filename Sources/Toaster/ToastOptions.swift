@@ -65,12 +65,12 @@ public class ToastOptions {
             return customTransition
         }
     }
-    
+
     var offset: CGFloat {
         if let customOffset = customOffset {
             return customOffset
         }
         
-        return position == .bottom ? ToastAnimationDefaultProperties.iosBottomOffset : ToastAnimationDefaultProperties.iosTopOffset
+        return position == .bottom ? ToastDefaultProperties.iosBottomOffset : ToastDefaultProperties.iosTopOffset
     }
 }

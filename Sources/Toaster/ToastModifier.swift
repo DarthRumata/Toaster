@@ -38,7 +38,7 @@ struct ToastModifier: ViewModifier {
                 .transition(options.viewTransition)
                 .offset(y: options.offset)
         }
-        .animation(.easeInOut(duration: ToastAnimationDefaultProperties.transitionDuration), value: scheduler.currentToast)
+        .animation(.easeInOut(duration: ToastDefaultProperties.transitionDuration), value: scheduler.currentToast)
     }
     
     @ViewBuilder private func toastView() -> some View {
