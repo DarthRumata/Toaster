@@ -21,8 +21,6 @@ final class BindingToastSchedulerTests: XCTestCase {
 
     private var cancellables = Set<AnyCancellable>()
 
-    private let predefinedToast = Toast(message: "Predefined", style: .error, dismissDelay: TestConstants.oneSecondDelay)
-
     override func setUpWithError() throws {
         scheduler = BindingToastScheduler()
     }
@@ -36,7 +34,7 @@ final class BindingToastSchedulerTests: XCTestCase {
         let expectation = expectation(description: "Toast should be removed after 4 second")
 
         scheduler.update(binding: isPresented)
-        scheduler.present(predefinedToast)
+        scheduler.present(TestConstants.predefinedToast)
 
         var counter = 0
         scheduler.$currentToast
