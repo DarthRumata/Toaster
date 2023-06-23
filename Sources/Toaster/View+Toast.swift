@@ -31,7 +31,12 @@ public extension View {
             })
     }
     
-    func toastView(isPresented: Binding<Bool>, @ViewBuilder view: @escaping () -> some View, dismissDelay: TimeInterval = ToastDefaultProperties.dismissDelay, options: @escaping OptionsCallback = { $0 }) -> some View {
+    func toastView(
+        isPresented: Binding<Bool>,
+        @ViewBuilder view: @escaping () -> some View,
+        dismissDelay: TimeInterval = ToastDefaultProperties.dismissDelay,
+        options: @escaping OptionsCallback = { $0 }
+    ) -> some View {
         globalScheduler.update(binding: isPresented)
         
         return modifier(ToastModifier(scheduler: globalScheduler, options: options(ToastOptions())))
