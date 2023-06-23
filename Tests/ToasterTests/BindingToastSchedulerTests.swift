@@ -46,7 +46,7 @@ final class BindingToastSchedulerTests: XCTestCase {
                     XCTAssertNil(wrapper)
                 case 1:
                     if case .predefinedView(let toast) = wrapper {
-                        XCTAssertEqual(toast, self.predefinedToast)
+                        XCTAssertEqual(toast, TestConstants.predefinedToast)
                     } else {
                         XCTFail("Toast wasn't appeared")
                     }

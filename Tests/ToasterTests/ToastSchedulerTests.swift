@@ -10,11 +10,8 @@ import XCTest
 import Combine
 import SwiftUI
 
-
-
 final class ToastSchedulerTests: XCTestCase {
     private var scheduler = ToastScheduler()
-    private let predefinedToast = Toast(message: "Predefined", style: .error, dismissDelay: TestConstants.oneSecondDelay)
     private var cancellables = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
@@ -38,7 +35,7 @@ final class ToastSchedulerTests: XCTestCase {
                 switch counter {
                 case 1:
                     if case .predefinedView(let toast) = wrapper {
-                        XCTAssertEqual(toast, self.predefinedToast)
+                        XCTAssertEqual(toast, TestConstants.predefinedToast)
                     } else {
                         XCTFail("Toast wasn't appeared")
                     }
@@ -54,7 +51,7 @@ final class ToastSchedulerTests: XCTestCase {
             }
             .store(in: &cancellables)
 
-        scheduler.present(predefinedToast)
+        scheduler.present(TestConstants.predefinedToast)
 
         wait(for: [expectation], timeout: TestConstants.oneSecondDelay + TestConstants.tolerance)
     }
