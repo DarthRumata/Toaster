@@ -15,9 +15,13 @@
 		12FB44722A4119CA00A0F697 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44712A4119CA00A0F697 /* ToastModifier.swift */; };
 		12FB44742A411AEF00A0F697 /* View+Modify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44732A411AEF00A0F697 /* View+Modify.swift */; };
 		12FB44762A411C5100A0F697 /* ToastScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44752A411C5100A0F697 /* ToastScheduler.swift */; };
-		12FB44782A422F5F00A0F697 /* ToastAnimationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */; };
+		12FB44782A422F5F00A0F697 /* ToastDefaultProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44772A422F5F00A0F697 /* ToastDefaultProperties.swift */; };
 		12FB44802A437BB800A0F697 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 12FB447F2A437BB800A0F697 /* DequeModule */; };
 		12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */; };
+		12FB44842A44E92A00A0F697 /* ToastOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44832A44E92A00A0F697 /* ToastOptions.swift */; };
+		12FB44882A45FCB300A0F697 /* ToastSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44872A45FCB300A0F697 /* ToastSchedulerTests.swift */; };
+		12FB448A2A46205B00A0F697 /* BindingToastSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB44892A46205B00A0F697 /* BindingToastSchedulerTests.swift */; };
+		12FB448C2A46494B00A0F697 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FB448B2A46494B00A0F697 /* TestConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +49,14 @@
 		12FB44712A4119CA00A0F697 /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		12FB44732A411AEF00A0F697 /* View+Modify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modify.swift"; sourceTree = "<group>"; };
 		12FB44752A411C5100A0F697 /* ToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScheduler.swift; sourceTree = "<group>"; };
-		12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAnimationProperties.swift; sourceTree = "<group>"; };
+		12FB44772A422F5F00A0F697 /* ToastDefaultProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDefaultProperties.swift; sourceTree = "<group>"; };
 		12FB44812A4382A700A0F697 /* BindingToastScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingToastScheduler.swift; sourceTree = "<group>"; };
+		12FB44832A44E92A00A0F697 /* ToastOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOptions.swift; sourceTree = "<group>"; };
+		12FB44852A45F93000A0F697 /* .hound.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .hound.yml; sourceTree = "<group>"; };
+		12FB44862A45F94600A0F697 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		12FB44872A45FCB300A0F697 /* ToastSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastSchedulerTests.swift; sourceTree = "<group>"; };
+		12FB44892A46205B00A0F697 /* BindingToastSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingToastSchedulerTests.swift; sourceTree = "<group>"; };
+		12FB448B2A46494B00A0F697 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,8 @@
 				12AFA0DA2A3FCBBB0010E01E /* Tests */,
 				12AFA0CA2A3FCB9C0010E01E /* LICENSE */,
 				12AFA0D22A3FCB9C0010E01E /* Package.swift */,
+				12FB44852A45F93000A0F697 /* .hound.yml */,
+				12FB44862A45F94600A0F697 /* .swiftlint.yml */,
 				12AFA0D12A3FCB9C0010E01E /* README.md */,
 				12AFA0CB2A3FCB9C0010E01E /* Sources */,
 				12AFA0B12A3FCB0F0010E01E /* Products */,
@@ -109,7 +121,8 @@
 				12FB44732A411AEF00A0F697 /* View+Modify.swift */,
 				12FB44752A411C5100A0F697 /* ToastScheduler.swift */,
 				12FB44712A4119CA00A0F697 /* ToastModifier.swift */,
-				12FB44772A422F5F00A0F697 /* ToastAnimationProperties.swift */,
+				12FB44832A44E92A00A0F697 /* ToastOptions.swift */,
+				12FB44772A422F5F00A0F697 /* ToastDefaultProperties.swift */,
 				12AFA0D02A3FCB9C0010E01E /* Toast.swift */,
 			);
 			path = Toaster;
@@ -127,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				12AFA0DC2A3FCBBB0010E01E /* ToastTests.swift */,
+				12FB44872A45FCB300A0F697 /* ToastSchedulerTests.swift */,
+				12FB448B2A46494B00A0F697 /* TestConstants.swift */,
+				12FB44892A46205B00A0F697 /* BindingToastSchedulerTests.swift */,
 			);
 			path = ToasterTests;
 			sourceTree = "<group>";
@@ -247,10 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				12AFA0D52A3FCB9C0010E01E /* View+Toast.swift in Sources */,
-				12FB44782A422F5F00A0F697 /* ToastAnimationProperties.swift in Sources */,
+				12FB44782A422F5F00A0F697 /* ToastDefaultProperties.swift in Sources */,
 				12AFA0D72A3FCB9C0010E01E /* Toast.swift in Sources */,
 				12FB44822A4382A700A0F697 /* BindingToastScheduler.swift in Sources */,
 				12FB44722A4119CA00A0F697 /* ToastModifier.swift in Sources */,
+				12FB44842A44E92A00A0F697 /* ToastOptions.swift in Sources */,
 				12FB44762A411C5100A0F697 /* ToastScheduler.swift in Sources */,
 				12FB44742A411AEF00A0F697 /* View+Modify.swift in Sources */,
 				12AFA0D42A3FCB9C0010E01E /* ToastView.swift in Sources */,
@@ -262,6 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				12AFA0DD2A3FCBBB0010E01E /* ToastTests.swift in Sources */,
+				12FB44882A45FCB300A0F697 /* ToastSchedulerTests.swift in Sources */,
+				12FB448A2A46205B00A0F697 /* BindingToastSchedulerTests.swift in Sources */,
+				12FB448C2A46494B00A0F697 /* TestConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

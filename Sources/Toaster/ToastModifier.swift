@@ -9,22 +9,25 @@ import SwiftUI
 
 struct ToastModifier: ViewModifier {
     @ObservedObject private var scheduler: ToastScheduler
+    private let options: ToastOptions
     
-    init(scheduler: ToastScheduler) {
+    init(scheduler: ToastScheduler, options: ToastOptions) {
         self.scheduler = scheduler
+        self.options = options
     }
     
     func body(content: Content) -> some View {
+        let alignment: Alignment = options.position == .bottom ? .bottom : .top
         content
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .modify {
                 if #available(iOS 15.0, watchOS 8.0, macOS 12.0, tvOS 15.0, *) {
-                    $0.overlay(alignment: .bottom) {
+                    $0.overlay(alignment: alignment) {
                         overlay(toastView: toastView)
                     }
                 } else {
                     // Fallback on earlier versions
-                    $0.overlay(overlay(toastView: toastView), alignment: .bottom)
+                    $0.overlay(overlay(toastView: toastView), alignment: alignment)
                 }
             }
     }
@@ -32,10 +35,10 @@ struct ToastModifier: ViewModifier {
     @ViewBuilder private func overlay(toastView: () -> some View) -> some View {
         ZStack {
             toastView()
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-                .offset(y: ToastAnimationDefaultProperties.iosBottomOffset)
+                .transition(options.viewTransition)
+                .offset(y: options.offset)
         }
-        .animation(.easeInOut(duration: ToastAnimationDefaultProperties.transitionDuration), value: scheduler.currentToast)
+        .animation(.easeInOut(duration: ToastDefaultProperties.transitionDuration), value: scheduler.currentToast)
     }
     
     @ViewBuilder private func toastView() -> some View {
